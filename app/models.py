@@ -49,3 +49,13 @@ class Image(models.Model):
     # Save image to database
     def save_image(self):
         self.save()
+
+# Lets Update the images
+def update_image(self, name, description, location, category):
+    self.name = name
+    self.description = description
+    self.location = location
+    self.category = category
+    self.save()
+
+    

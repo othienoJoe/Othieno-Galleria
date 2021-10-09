@@ -14,11 +14,29 @@
 	<title>Othieno Galleria</title>
 	{% endif %}
 
+	{% block styles %}
+	{% bootstrap_css %}
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	{% endblock %}
+
 </head>
 <body>
+	
+	<!-- The Navbar -->
+	{% include "navbar.html" %}
+
 	<!-- Content section -->
 	{% block content %}
 
 	{% endblock %}
+
+	<!-- The Footer -->
+	{% include 'footer.html' %}
+
+	<!-- The styling and restructuring Scripts -->
+	{% block scripts %}
+	{% bootstrap_javascript %}
+	{% endblock %}
+
 </body>
 </html>

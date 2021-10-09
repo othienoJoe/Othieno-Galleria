@@ -11,6 +11,9 @@ def welcome(request):
 def index(request):
 	images = Image.objects.all().order_by('-id')
 	locations = Location.objects.all()
+	category = Category.objects.all()
+	title = 'Homepage'
+	return render(request, 'index.html', {'images': images, 'location': locations, 'category': category, 'title': title})
 
 # Search function to search for the images
 def search(request):

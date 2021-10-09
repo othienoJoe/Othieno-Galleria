@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Image
+import datetime as dt
+from .models import Image, Location, Category
 from django.http import HttpResponse
 
 # Create your views here.
@@ -9,3 +10,9 @@ def welcome(request):
 # The index function for displaying the images
 def index(request):
 	images = Image.objects.all().order_by('-id')
+	locations = Location.objects.all()
+
+# Search function to search for the images
+def search(request):
+	if 'category' in request.GET and request.GET["category"]:
+		search_term = request.GET.get("category").lower()

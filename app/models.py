@@ -14,3 +14,4 @@ class Image(models.Model):
     # save image to database
     def save_image(self):
         self.save()
+				

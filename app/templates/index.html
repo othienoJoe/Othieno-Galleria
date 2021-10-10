@@ -41,8 +41,60 @@
 							</div>
 					  </div>
 					</div>
+
+					<!-- modal to display the image details -->
+          <div class="modal fade" id="modalDisplayImageDetails{{photo.id}}" tabindex="-1"
+            aria-labelledby="modalDisplayImageDetailsLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalDisplayImageDetailsLabel">{{ photo.name}} <small
+                      class="badge rounded-pill bg-warning text-dark">{{ photo.location}}</small></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img src="{{ photo.image.url }}" alt="" class="img-fluid">
+                  <div class="content m-3">
+                    <h6 class="headings text-capitalize badge rounded-pill bg-warning text-dark">
+                      <small>{{ photo.category }}</small>
+                    </h6>
+                    <h4 class="headings text-underline">Description</h4>
+                    <p class="m-3 headings">
+                      {{photo.description }}
+                    </p>
+                  </div>
+                  <div class="share-button">
+                    <input type="hidden" value="{{ photo.image.url }}" id="inputShareLink" class="form-control">
+                    <button onclick="shareLink()" class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="tooltip"
+                      data-bs-placement="top" title="Click to copy the link">
+                      <i class="fa fa-share"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- modal end -->
+
+          {% empty %}
+          <!-- No Images section -->
+          <div class="col-md-12">
+            <h1>
+              No photos
+            </h1>
+          </div>
+          {% endfor %}
+					
 				</div>
-			</div>
-		</div>
-	</div>
+      </div>
+    </div>
+  </div>
 </div>
+<script>
+	function shareLink() {
+		var copyText = document.getElementById('inputShareLink')
+		copyText.select();
+		document.execCommand('copy')
+	}
+</script>
+{% endblock %}

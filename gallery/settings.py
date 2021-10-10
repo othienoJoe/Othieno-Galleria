@@ -36,7 +36,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap4',
     'app.apps.AppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [

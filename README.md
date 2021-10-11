@@ -33,6 +33,7 @@ A personal gallery is a simple photo gallery web application to showcase beautif
 
 <ul>
   <li>
+	
   Copy the github repository url
   Clone to your computer
   Open terminal and navigate to the directory of the project you just cloned to your computer
@@ -59,6 +60,7 @@ A personal gallery is a simple photo gallery web application to showcase beautif
   `python manage.py runserver`
 
   Open the browser and navigate to <http://127.0.0.1:8000/> to see the application in action
+
   <li>
 <ul>
 
@@ -81,7 +83,7 @@ The following languages have been used on this project:
 
 Live link to view the project View Gallery
 
-- Support and contact details:
+* Support and contact details:
 
 To make a contribution to the code used or any suggestions you can click on the contact link and email me your suggestions.
 
